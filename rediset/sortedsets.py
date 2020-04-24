@@ -145,7 +145,7 @@ class SortedSetNode(SortedNode):
 
     def add(self, *values):
         values = dict(values)
-        self.rs.redis.zadd(self.prefixed_key, **values)
+        self.rs.redis.zadd(self.prefixed_key, values)
 
     def remove(self, *values):
         self.rs.redis.zrem(self.prefixed_key, *values)
